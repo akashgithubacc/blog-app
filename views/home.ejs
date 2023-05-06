@@ -1,0 +1,28 @@
+
+<%- include("partials/header") -%>
+
+
+<h1>Home</h1>
+<p> <%= homeStartingContent %> </p>
+
+<br>
+
+<a class="btn btn-primary" href="/compose">Create Blog</a>    
+
+ <br>
+
+<% posts.forEach(post => {  %>
+     
+     <h2>  <%= post.title %> </h2> 
+
+     <p>
+     <%= post.content.substring(0,200) + " ..."  %>
+     <a href="/posts/<%= post.title %>">read more</a>
+     </p> 
+
+<% }); %>
+     
+
+<br><br><br><br><br><br><br><br><br><br>
+
+<%- include("partials/footer") -%> 
